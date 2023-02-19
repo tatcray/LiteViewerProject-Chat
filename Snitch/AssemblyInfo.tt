@@ -1,0 +1,13 @@
+﻿<#@ template language="C#" #>
+
+using System.Reflection;
+using System.Windows;
+
+[assembly: AssemblyVersion("1.0.<#= this.LifeDay #>.<#= this.RevisionNumber #>")]
+[assembly: AssemblyFileVersion("1.0.<#= this.LifeDay #>.<#= this.RevisionNumber #>")]
+
+<#+
+    int RevisionNumber = (int)DateTime.UtcNow.TimeOfDay.TotalMinutes;
+    int LifeDay = (int)(DateTime.UtcNow - new DateTime(2022, 4, 1)).TotalDays;
+#>
+

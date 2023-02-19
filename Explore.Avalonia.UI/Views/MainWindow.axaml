@@ -1,0 +1,131 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:Explore.Avalonia.UI.ViewModels"
+        xmlns:pages="clr-namespace:Explore.Avalonia.UI.Views"
+		xmlns:i="clr-namespace:Avalonia.Interactivity;assembly=Avalonia.Interactivity"
+		xmlns:ii="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Explore.Avalonia.UI.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		Title="Чат с пользователем"
+		FontSize="22"
+		FontFamily="Open Sans"
+		FontWeight="500"
+		Foreground="#343D4B"
+		FontStyle="Normal"
+		Height="490" Width="490"
+		Background="#F5F6FC"
+        WindowStartupLocation="Manual">
+
+	<Window.Styles>
+		<Style Selector="TextBlock.Message">
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="FontStyle" Value="Normal"/>
+			<Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+			<Setter Property="FontFamily" Value="Open Sans"/>
+			<Setter Property="FontWeight" Value="400"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+		</Style>
+		
+		<Style Selector="Border.SenderMe">
+			<Setter Property="Padding" Value="12"/>
+			<Setter Property="CornerRadius" Value="14 14 5 14"/>
+			<Setter Property="Background" Value="#649DDF"/>
+			<Setter Property="HorizontalAlignment" Value="Right"/>
+		</Style>
+		<Style Selector="TextBlock.SenderMeText">
+			<Setter Property="Foreground" Value="#F5F6FC"/>
+		</Style>
+		<Style Selector="TextBlock.AnotherSenderText">
+				<Setter Property="Foreground" Value="#4A586D"/>
+			</Style> 
+			<Style Selector="Border.AnotherSender">
+				<Setter Property="Padding" Value="12"/>
+				<Setter Property="CornerRadius" Value="14 14 14 5"/>
+				<Setter Property="Background" Value="#DBDEE5"/>
+				<Setter Property="HorizontalAlignment" Value="Left"/>
+			</Style>
+		<Style Selector="TextBlock">
+			<Setter Property="Padding" Value="12"/>
+			<!-- <Setter Property="CornerRadius" Value="14 14 14 5"/> -->
+			<Setter Property="Background" Value="#DBDEE5"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<!--<Style.Triggers>
+				<ii:DataTrigger Binding="{Binding IsMeSender}" Value="True">
+					<Setter Property="Padding" Value="12"/>
+					<Setter Property="CornerRadius" Value="14 14 5 14"/>
+					<Setter Property="Background" Value="#649DDF"/>
+					<Setter Property="HorizontalAlignment" Value="Right"/>
+				</ii:DataTrigger>
+			</Style.Triggers> -->
+		</Style>
+	</Window.Styles>
+	
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+
+	<Grid RowDefinitions="* Auto"
+          Margin="10">
+
+		<Grid>
+			<ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto">
+				
+	   			<ItemsControl Items="{Binding Messages}"
+                              Background="Transparent">
+
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Border Padding="32 0 32 0">
+								<StackPanel VerticalAlignment="Center">
+									<Border Padding="0 20 0 10">
+										<TextBlock HorizontalAlignment="Right"
+												   Text="{Binding Sender}"
+												   TextWrapping="WrapWithOverflow"
+												   FontSize="16"
+												   FontFamily="Open Sans"
+												   FontStyle="Normal"
+												   FontWeight="400"
+												   Foreground="#343D4B"/>
+									</Border>
+											<Border Classes="SenderMeText TextBlock">
+												<TextBlock Text="{Binding MessageText, Mode=OneWay}"
+														   Classes="Message SenderMeText"/>
+											</Border>
+								</StackPanel>
+							</Border>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+				</ScrollViewer>
+
+		</Grid>
+
+		<Grid Grid.Row="1"
+              ColumnDefinitions="* Auto"
+              Margin="0 10 0 0">
+				<TextBox TextWrapping="Wrap"
+						 AcceptsReturn="True"
+						 AcceptsTab="True"
+						 Text="{Binding MessageText, Mode=TwoWay}"
+						 FontSize="16"
+						 FontStyle="Normal"
+						 FontWeight="400"
+						 Watermark="Введите сообщение..." />
+				<Button Grid.Column="1"
+						VerticalAlignment="Stretch"
+						VerticalContentAlignment="Center"
+						Margin="10 0 0 0"
+						Command="{Binding SendCommand}"
+						Content="O" />
+		</Grid>
+
+	</Grid>
+
+
+</Window>
