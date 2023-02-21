@@ -141,6 +141,7 @@ namespace Snitch.Server
         private WebResponse ManageMessage(Snitch.Core.Abstractions.WebRequest request)
         {
             var requestObj = BinaryConverter.Deserialize<GetMaessageRequest>(request.Data);
+            requestObj.Message.IsMeSender = false;
             this.Messages.Add( requestObj.Message); 
             GetMaessageResponse response = new GetMaessageResponse();
             try

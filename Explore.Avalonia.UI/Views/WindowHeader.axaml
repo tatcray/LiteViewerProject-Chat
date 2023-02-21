@@ -1,0 +1,22 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:Explore.Avalonia.UI.Views"
+             xmlns:i="clr-namespace:Avalonia.Interactivity;assembly=Avalonia.Interactivity"
+             x:Class="Explore.Avalonia.UI.Views.WindowHeader"
+             mc:Ignorable="d"
+             d:DesignHeight="44" d:DesignWidth="448">
+    <Grid Background="#FF3E3E3E">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" x:Name="TitleTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Foreground="White" FontFamily="Open Grotesque" FontWeight="500" FontStyle="Normal" />
+        <Button Grid.Column="1" x:Name="minimizeButton" Content="_" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" FontSize="16" Foreground="White" Background="#FF3E3E3E" BorderBrush="#FF707070" BorderThickness="0" />
+        <Button Grid.Column="2" x:Name="maximizeButton" Content="[]" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" FontSize="16" Foreground="White" Background="#FF3E3E3E" BorderBrush="#FF707070" BorderThickness="0" />
+        <Button Grid.Column="3" x:Name="closeButton" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" FontSize="16" Foreground="White" Background="#FF3E3E3E" BorderBrush="#FF707070" BorderThickness="0" />
+    </Grid>
+</UserControl>
