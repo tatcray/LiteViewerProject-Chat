@@ -36,4 +36,10 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\RequestingTechnicalSupport.axaml.cs">
+      <DependentUpon>RequestingTechnicalSupport.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

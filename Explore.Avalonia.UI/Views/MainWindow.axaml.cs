@@ -1,4 +1,4 @@
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Explore.Avalonia.UI.ViewModels;
 
 namespace Explore.Avalonia.UI.Views
@@ -7,7 +7,6 @@ namespace Explore.Avalonia.UI.Views
     {
         public MainWindow()
         {
-
             InitializeComponent();
         }
     }

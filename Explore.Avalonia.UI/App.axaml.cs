@@ -9,7 +9,7 @@ namespace Explore.Avalonia.UI
     public partial class App : Application
     {
         public override void Initialize()
-        {
+        { 
             AvaloniaXamlLoader.Load(this);
         }
 
@@ -17,9 +17,9 @@ namespace Explore.Avalonia.UI
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
+                desktop.MainWindow = new StartPage
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new StartPageViewModel(),
                 };
             }
 

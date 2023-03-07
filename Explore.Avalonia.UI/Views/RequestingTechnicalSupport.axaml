@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        xmlns:views="clr-namespace:Explore.Avalonia.UI.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Explore.Avalonia.UI.Views.RequestingTechnicalSupport"
+        Title="Обращение за оказанием технической поддержки"
+        Icon="/Assets/avalonia-logo.ico"
+        Foreground="#343D4B"
+		FontStyle="Normal"
+		Height="623" Width="696"
+		Background="#F5F6FC"
+        WindowStartupLocation="Manual">
+
+	<Window.Styles>
+		<Style Selector="TextBlock.GrayRegularText">
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="FontStyle" Value="Normal"/>
+			<Setter Property="FontWeight" Value="400"/>
+			<Setter Property="FontFamily" Value="Open Sans"/>
+			<Setter Property="Foreground" Value="#343D4B"/>
+		</Style>
+		<Style Selector="TextBlock.BlueText">
+			<Setter Property="FontSize" Value="22"/>
+			<Setter Property="FontStyle" Value="Normal"/>
+			<Setter Property="FontWeight" Value="600"/>
+			<Setter Property="FontFamily" Value="Open Sans"/>
+			<Setter Property="LineHeight" Value="12"/>
+			<Setter Property="Foreground" Value="#3A8DDE"/>
+		</Style>
+		<Style Selector="TextBlock.InitializingText">
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="FontStyle" Value="Normal"/>
+			<Setter Property="FontWeight" Value="400"/>
+			<Setter Property="FontFamily" Value="Open Sans"/>
+			<Setter Property="Foreground" Value="#343D4B"/>
+		</Style>
+	</Window.Styles>
+	
+	<Grid RowDefinitions="* Auto"
+          Margin="10">
+
+		<!-- <Grid Grid.Row="*"
+		      ColumnDefinitions="* Auto"
+		      Margin="0 10 0 0">
+			<TextBlock Classes="LightBigText"
+									Text="Ваш ID:">
+			</TextBlock>
+			<TextBlock Classes="BoldBigText"
+			           Grid.Column="1"
+					   Text="{Binding id}">
+			</TextBlock>
+		
+		</Grid>
+		<Grid Grid.Row="*"
+		      ColumnDefinitions="* Auto"
+		      Margin="0 10 0 0">
+			<TextBlock Classes="LightBigText"
+									Text="Ваш BIN:">
+			</TextBlock>
+			<TextBlock Classes="BoldBigText"
+			           Grid.Column="1"
+			           Text="{Binding pin}"> 
+			</TextBlock>
+			иконки, спросить Влада, как делать 
+		</Grid>  -->
+	</Grid>
+
+
+</Window>

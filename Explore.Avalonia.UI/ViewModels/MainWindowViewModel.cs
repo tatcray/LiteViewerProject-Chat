@@ -21,15 +21,14 @@ namespace Explore.Avalonia.UI.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-
         public MainWindowViewModel ()
         {
             //SendCommand = new AsyncCommand(OnSend);
             ConnectCommand = new AsyncCommand(OnConnect);
             Task.Run(() => InitializeAsync());
+            
         }
-        public string Greeting => "Welcome to Avalonia!";
-
+        
         public ObservableCollection<Message> Messages { get; } = new();
 
         public string _messageText { get; set; }
@@ -44,7 +43,7 @@ namespace Explore.Avalonia.UI.ViewModels
                 OnPropertyChanged(nameof(IsMeSender));
             }
         }
-        public string MessageText
+        public string  MessageText
         {
             get => _messageText;
             set

@@ -112,7 +112,7 @@
 						VerticalContentAlignment="Center"
 						Margin="10 0 0 0"
 						Command="{Binding SendCommand}"
-						Content="O" />
+						Content="Oтправить" />
 		</Grid>
 
 	</Grid>
