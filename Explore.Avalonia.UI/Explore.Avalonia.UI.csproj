@@ -16,7 +16,7 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.10.18" />
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.18" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.18" />
-    <PackageReference Include="Avalonia.Remote.Protocol" Version="0.10.18" />
+    <PackageReference Include="Avalonia.Remote.Protocol" Version="11.0.0-preview5" />
     <PackageReference Include="Avalonia.Xaml.Interactions" Version="0.10.18" />
     <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.18" />
     <PackageReference Include="System.Management.Automation" Version="7.2.9" />
