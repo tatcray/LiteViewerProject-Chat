@@ -50,18 +50,16 @@
 			<Setter Property="LineHeight" Value="12"/>
 			<Setter Property="Foreground" Value="#8589A0"/>
 		</Style>
-		<Style Selector="ComboBoxItem.ComboBoxStyle">
-			<Setter Property="Opacity" Value="0.6" />
-			<Setter Property="Background" Value="White"/>
-			<Setter Property="Width" Value="570"/>
-		</Style>
 		<Style Selector="ComboBox.ButtonDropdown">
-			<!--<Setter Property="RenderTransformOrigin" Value="0,0"/>
-			<Setter Property="RenderTransform">
-				<Setter.Value>
-					<TranslateTransform X="0" Y="550"/>
-				</Setter.Value>
-			</Setter>-->
+			<Setter Property="Opacity" Value="0.6"/>
+			<Setter Property="Margin" Value="10 11 0 0"/>
+			<Setter Property="Height" Value="0"/>
+			<Setter Property="Width" Value="0"/>
+			<Setter Property="FontSize" Value="12"/>
+			<Setter Property="FontStyle" Value="Normal"/>
+			<Setter Property="FontWeight" Value="400"/>
+			<Setter Property="FontFamily" Value="Open Sans"/>
+			<Setter Property="Foreground" Value="#8589A0"/>
 		</Style>
 	</Window.Styles>
 	
@@ -100,7 +98,21 @@
 		</TextBlock>
 		<Grid ColumnDefinitions="* Auto Auto"
 		      Margin="0 0 0 0">
-			
+			<ComboBox Classes="ButtonDropdown"
+			          Items="{Binding ItemsSource}"
+			          Grid.Column="0"
+			          Name="myComboBox"
+			          Height="0"
+			          Width="0"
+			          Margin="10 11 0 0"
+			          VerticalAlignment="Stretch">
+				<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding}"
+							           Width="550"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+			</ComboBox>
 			<TextBox Grid.Column="0"
 			         TextWrapping="Wrap"
 			         AcceptsReturn="True"
@@ -112,41 +124,20 @@
 			         Height="36"
 			         CornerRadius="3 0 0 3"
 			         Watermark="Введите ID" /> <!--Text="{Binding PluggableID, Mode=TwoWay}"-->
-			<ComboBox Classes="ButtonDropdown" Grid.Column="1"
-			          Height="36"
-			          Width="36"
-			          BorderThickness="1"
-			          BorderBrush="#9295A9"   
-			          Padding="-10 14 9 14"
-			          VerticalAlignment="Stretch"
-			          
-			          CornerRadius="0">
-				<ComboBoxItem Classes="ComboBoxStyle">Inline Items</ComboBoxItem>
-				<ComboBoxItem Classes="ComboBoxStyle">Inline Item 2</ComboBoxItem>
-				<ComboBoxItem Classes="ComboBoxStyle">Inline Item 3</ComboBoxItem>
-				<ComboBoxItem Classes="ComboBoxStyle">Inline Item 4</ComboBoxItem>
-			</ComboBox>
+			<Button Grid.Column="1"
+			        Click="Button_Click"
+			        Height="36"
+			        Width="36"
+			        BorderThickness="1"
+			        BorderBrush="#9295A9"   
+			        CornerRadius="0">
+			</Button>
 			<Button Grid.Column="2"
 			        Background="#153F72"
 			        Width="43"
 			        Height="36"
 			        CornerRadius="0 3 3 0">
 			</Button>
-			<!--	<ScrollViewer>
-			    <ListBox Items="{Binding Options}">   //for scroll
-			        <ListBox.ItemTemplate>
-			            <DataTemplate>
-			                <TextBlock Text="{Binding}"/>
-			            </DataTemplate>
-			        </ListBox.ItemTemplate>
-			    </ListBox>
-				</ScrollViewer>
-				<Button Grid.Column="1"			//должна выдавать десять последних подключений
-				        VerticalAlignment="Stretch"
-				        VerticalContentAlignment="Center"
-				        Margin="10 0 0 0"
-				        Command="{Binding SendCommand}"
-				        Content="O" />		-->
 		</Grid>
 		<TextBlock Classes="LightBigText"
 		           TextAlignment="Left"
