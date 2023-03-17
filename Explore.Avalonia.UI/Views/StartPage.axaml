@@ -3,12 +3,11 @@
         xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+        mc:Ignorable="d" d:DesignWidth="800"
         x:Class="Explore.Avalonia.UI.Views.StartPage"
-        Icon="/Assets/avalonia-logo.ico"
         Foreground="#343D4B"
         FontStyle="Normal"
-        Height="514" Width="730"
+        Height="460" Width="730"
         WindowStartupLocation="Manual">
 	 <Window.Background>
 		 <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
@@ -22,13 +21,14 @@
 			<Setter Property="FontSize" Value="36"/>
 			<Setter Property="FontStyle" Value="Normal"/>
 			<Setter Property="FontWeight" Value="600"/>
+			<Setter Property="Margin" Value="14 0 22 0"/>
 			<Setter Property="FontFamily" Value="Open Sans"/>
 			<Setter Property="Foreground" Value="#194F90"/>
 		</Style>
 		<Style Selector="TextBlock.LightBigText">
 			<Setter Property="TextAlignment" Value="Left"/>
 			<Setter Property="FontSize" Value="24"/>
-			<Setter Property="Margin" Value="0 12 28 12"/>
+			<Setter Property="Margin" Value="0 12 0 12"/>
 			<Setter Property="FontStyle" Value="Normal"/>
 			<Setter Property="FontWeight" Value="400"/>
 			<Setter Property="FontFamily" Value="Open Sans"/>
@@ -61,35 +61,62 @@
 			<Setter Property="FontFamily" Value="Open Sans"/>
 			<Setter Property="Foreground" Value="#8589A0"/>
 		</Style>
+		<Style Selector="Button.DefaultButtonStyle">
+			<Setter Property="Width" Value="32"/>
+			<Setter Property="Height" Value="32"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
 	</Window.Styles>
 	
     <Design.DataContext>
         <vm:StartPageViewModel/>
     </Design.DataContext>
 	<ItemsControl Padding="38 40 38 0">
-		<Grid ColumnDefinitions="* Auto">
-			<Grid ColumnDefinitions="* *">
-				<TextBlock Classes="LightBigText"
-			           Text="Ваш ID:">
-				</TextBlock>
-				<TextBlock Grid.Column="1"
-			           Classes="BoldBigText"
-			           Text="{Binding id}"> <!-- откуда брать ID? -->
-				</TextBlock>
-			</Grid>
+		<Grid ColumnDefinitions="Auto Auto 46 Auto">
+			<TextBlock Classes="LightBigText"
+		           Width="112"
+		           Text="Ваш ID:">
+			</TextBlock>
+			<TextBlock Grid.Column="1"
+		           Classes="BoldBigText"
+		           Text="{Binding id}"> <!-- откуда брать ID? -->
+			</TextBlock>
+			<Button Grid.Column="2"
+			        Margin="0"
+			        Classes="DefaultButtonStyle">
+				<Svg Path="../Assets/StartPageIcons/IconSettings.svg"/>
+			</Button>
+			<Button Grid.Column="3"
+			        Margin="0"
+			        Classes="DefaultButtonStyle">
+				<Svg Path="../Assets/StartPageIcons/IconCopy.svg"/>
+			</Button>
 			<!-- иконки, спросить Влада, как делать-->
 		</Grid>
-		<Grid ColumnDefinitions="Auto *">
+		<Grid ColumnDefinitions="Auto Auto 46 Auto">
 		
 			<TextBlock Classes="LightBigText"
+			           Width="112"
 			           Text="Ваш PIN:">
 			</TextBlock>
 			<TextBlock Grid.Column="1"
 			           HorizontalAlignment="Left"
 			           Classes="BoldBigText"
 			           TextAlignment="Left"
-			           Text="1337"> <!-- откуда брать PIN? -->
+			           Text="1337768"> <!-- откуда брать PIN? -->
 			</TextBlock>
+			<Button Grid.Column="2"
+			        Margin="0"
+			        Classes="DefaultButtonStyle">
+				<Svg Path="../Assets/StartPageIcons/IconUpdate.svg"/>
+			</Button>
+			<Button Grid.Column="3"
+			        Margin="0"
+			        Classes="DefaultButtonStyle">
+				<Svg Path="../Assets/StartPageIcons/IconCopy.svg"/>
+			</Button>
 		</Grid>
 		<!-- иконки, спросить Влада, как делать  -->
 		<TextBlock Classes="LightBigText"
@@ -97,7 +124,7 @@
 		           Text="ID подключаемого компьютера">
 		</TextBlock>
 		<Grid ColumnDefinitions="* Auto Auto"
-		      Margin="0 0 0 0">
+		      Margin="0">
 			<ComboBox Classes="ButtonDropdown"
 			          Items="{Binding ItemsSource}"
 			          Grid.Column="0"
@@ -126,17 +153,19 @@
 			         Watermark="Введите ID" /> <!--Text="{Binding PluggableID, Mode=TwoWay}"-->
 			<Button Grid.Column="1"
 			        Click="Button_Click"
+			        CornerRadius="0"
 			        Height="36"
-			        Width="36"
-			        BorderThickness="1"
-			        BorderBrush="#9295A9"   
-			        CornerRadius="0">
+			        Width="36">
+				<Svg Path="../Assets/StartPageIcons/IconDropdown.svg"/>
 			</Button>
 			<Button Grid.Column="2"
 			        Background="#153F72"
 			        Width="43"
 			        Height="36"
 			        CornerRadius="0 3 3 0">
+				<Svg Path="../Assets/StartPageIcons/IconList.svg"
+				     Width="31"
+				     Height="31"/>
 			</Button>
 		</Grid>
 		<TextBlock Classes="LightBigText"
@@ -161,19 +190,27 @@
 			        Height="36"
 			        BorderBrush="#9295A9" 
 			        BorderThickness="1" 
-			        CornerRadius="0 3 3 0"/>
+			        CornerRadius="0 3 3 0">
+				<Svg Path="../Assets/StartPageIcons/IconConnection.svg"
+				     Width="20"
+				     Height="20"/>
+			</Button>
 		</Grid>
-		<TextBlock Grid.Row="0" 
+		<TextBlock 
 		       Height="30"
 		       HorizontalAlignment="Center"
-		       Margin="0 36 0 29"
+		       Margin="0 36 0 0"
 		       Classes="BlueBigText"
+		       PointerPressed="OnSupportButtonClick"
+		       Focusable="True"
 		       Text="Обратиться в техническую поддержку">
 		</TextBlock>
-		<TextBlock Grid.Row="1" Classes="GrayLittleText" 
+		<TextBlock Classes="GrayLittleText" 
 		           Height="20"
+		           Margin="0 20 0 24"
 		           HorizontalAlignment="Center"
 		           Text="© 2023 ZEL-Услуги">
 		</TextBlock>
+		
 	</ItemsControl>
 </Window>

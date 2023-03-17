@@ -17,6 +17,7 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.18" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.18" />
     <PackageReference Include="Avalonia.Remote.Protocol" Version="11.0.0-preview5" />
+    <PackageReference Include="Avalonia.Svg.Skia" Version="0.10.18" />
     <PackageReference Include="Avalonia.Xaml.Interactions" Version="0.10.18" />
     <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.18" />
     <PackageReference Include="System.Management.Automation" Version="7.2.9" />
@@ -34,11 +35,25 @@
     <ProjectReference Include="..\Snitch\Snitch.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\RequestingTechnicalSupportIcons" />
+    <Folder Include="Assets\StartPageIcons" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\RequestingTechnicalSupport.axaml.cs">
       <DependentUpon>RequestingTechnicalSupport.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\WindowHeader.axaml.cs">
+      <DependentUpon>WindowHeader.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SendScreenshot.axaml.cs">
+      <DependentUpon>SendScreenshot.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Successfully.axaml.cs">
+      <DependentUpon>Successfully .axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

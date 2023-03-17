@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Explore.Avalonia.UI.ViewModels;
 using ReactiveUI;
@@ -35,6 +36,12 @@ namespace Explore.Avalonia.UI.Views
         public void RaisePropertyChanged(PropertyChangedEventArgs args)
         {
             throw new System.NotImplementedException();
+        }
+
+        private void OnSupportButtonClick(object? sender, PointerPressedEventArgs e)
+        {
+            RequestingTechnicalSupport window = new RequestingTechnicalSupport();
+            window.Show();
         }
     }
 }
