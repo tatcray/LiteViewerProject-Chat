@@ -56,5 +56,13 @@
       <DependentUpon>Successfully .axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ConnectionRequest.axaml.cs">
+      <DependentUpon>ConnectionRequest.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ScreenConnection.axaml.cs">
+      <DependentUpon>ScreenConnection.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

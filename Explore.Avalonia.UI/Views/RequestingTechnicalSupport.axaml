@@ -103,16 +103,12 @@
 				</Button>
 			</Grid>
 		</StackPanel>
-		<Grid Margin="0 144 0 0">
-			<TextBlock Classes="SimpleText"
-			           Margin="32 0 32 0">
-				Чтобы оставить заявку на оказание технической поддержки, заполните анкету
-			</TextBlock>
-			<TextBlock Classes="SimpleText"
-			           Margin="32 28 32 0">
-				и нажмите кнопку "Отправить"
-			</TextBlock>
-		</Grid>
+		<TextBlock Classes="SimpleText"
+		           Width="627"
+		           Margin="32 124 32 0"
+		           TextWrapping="Wrap">
+				Чтобы оставить заявку на оказание технической поддержки, заполните анкету и нажмите кнопку "Отправить"
+		</TextBlock>
 		<Grid RowDefinitions="Auto Auto Auto"
 		      Margin=" 0 192 0 0">
 			<Grid Grid.Row="0" Grid.ColumnDefinitions="Auto Auto">

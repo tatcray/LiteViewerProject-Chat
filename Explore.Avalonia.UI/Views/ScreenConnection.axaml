@@ -1,0 +1,88 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        x:Class="Explore.Avalonia.UI.Views.ScreenConnection"
+        Foreground="#343D4B"
+        FontStyle="Normal"
+        WindowState="Maximized"
+        WindowStartupLocation="Manual">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+            <GradientStop Color="#DFE3EC" Offset="0.5" />
+            <GradientStop Color="#F5F6FC" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Styles>
+        <Style Selector="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style Selector="Svg">
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </Window.Styles>
+    <Design.DataContext>
+        <vm:ScreenСonnectionViewModel/>
+    </Design.DataContext>
+    <Grid RowDefinitions="60 Auto">
+        <StackPanel Orientation="Horizontal">
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/Arrows.svg"/>
+            </Button>
+            <Button Click="ChatButton_OnClick">
+                <Svg Path="../Assets/ScreenConnectionIcons/Message.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/ACD.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/Lock.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/Eye.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/Screen.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/FileSharing.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/SettingsMonitor.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/Regedit.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/CMD.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/PowerShell.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/WindowSettings.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/TaskManager.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/MMC.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/ResourceMonitor.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/Autoruns.svg"/>
+            </Button>
+            <Button>
+                <Svg Path="../Assets/ScreenConnectionIcons/BroadcastQuality.svg"/>
+            </Button>
+        </StackPanel>
+        <Image Grid.Row="1"
+               Source="../Assets/ScreenConnectionIcons/Image5.png"/>
+    </Grid>
+</Window>

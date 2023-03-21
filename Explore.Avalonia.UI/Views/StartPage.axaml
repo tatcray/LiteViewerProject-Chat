@@ -185,11 +185,11 @@
 					 Watermark="Введите PIN" /> <!--				         Text="{Binding ConnectionPIN, Mode=TwoWay}" -->
 			<Button Grid.Column="1"
 			        VerticalContentAlignment="Center"
-			        Command="{Binding}"
 			        Width="43"
 			        Height="36"
 			        BorderBrush="#9295A9" 
 			        BorderThickness="1" 
+			        Click="ScreenСonnection"
 			        CornerRadius="0 3 3 0">
 				<Svg Path="../Assets/StartPageIcons/IconConnection.svg"
 				     Width="20"

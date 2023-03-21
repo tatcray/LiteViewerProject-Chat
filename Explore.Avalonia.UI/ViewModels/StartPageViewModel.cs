@@ -10,7 +10,7 @@ namespace Explore.Avalonia.UI.ViewModels
     {
         public StartPageViewModel ()
         {
-            //RequestingTechnicalSupport window = new RequestingTechnicalSupport();
+            //ConnectionRequest window = new ConnectionRequest();
             //window.Show();
             
         }

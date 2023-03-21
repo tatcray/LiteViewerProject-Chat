@@ -19,9 +19,9 @@ using System.Windows.Input;
 
 namespace Explore.Avalonia.UI.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class ChatWindowViewModel : ViewModelBase
     {
-        public MainWindowViewModel ()
+        public ChatWindowViewModel ()
         {
             //SendCommand = new AsyncCommand(OnSend);
             ConnectCommand = new AsyncCommand(OnConnect);
@@ -103,7 +103,7 @@ namespace Explore.Avalonia.UI.ViewModels
         */
         private static async Task<WebServer> InitializeWebServerAsync(ObservableCollection<Message> messages)//ILogger logger)
         {
-            var options = new DefaultServerOptions(12345) //����-------
+            var options = new DefaultServerOptions(1234) //����-------
             {
                 BufferSize = 1024 * 1024 * 60,
                 PingTimeout = TimeSpan.FromMinutes(1),
@@ -114,7 +114,7 @@ namespace Explore.Avalonia.UI.ViewModels
         private static async Task<WebClient> InitializeWebClientAsync()//ILogger logger)
         {
             int Port;
-            Port = 1234; //----------------
+            Port = 12345; //----------------
             var serverIpv4 = "127.0.0.1";//IpManager.GetLocalIp();
 
             var options = new DefaultWebClientOptions(serverIpv4, Port)

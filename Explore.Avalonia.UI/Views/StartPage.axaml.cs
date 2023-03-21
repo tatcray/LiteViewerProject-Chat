@@ -38,6 +38,12 @@ namespace Explore.Avalonia.UI.Views
             throw new System.NotImplementedException();
         }
 
+        private void ScreenСonnection(object? sender, RoutedEventArgs e)
+        {
+            ScreenConnection window = new ScreenConnection();
+            window.Show();
+        }
+
         private void OnSupportButtonClick(object? sender, PointerPressedEventArgs e)
         {
             RequestingTechnicalSupport window = new RequestingTechnicalSupport();

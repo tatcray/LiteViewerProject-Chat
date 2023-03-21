@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" 
-        x:Class="Explore.Avalonia.UI.Views.CancelAppeal"
-        Title="Отменить обращение"
+        x:Class="Explore.Avalonia.UI.Views.ConnectionRequest"
+        Title="Запрос на соединение"
         Foreground="#343D4B"
         FontStyle="Normal"
-        Height="170" Width="455"
+        Height="316" Width="455"
         WindowStartupLocation="Manual">
     <Window.Background>
         <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
@@ -24,7 +24,7 @@
         <Style Selector="TextBlock.Question">
             <Setter Property="Foreground" Value="#343D4B"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="LineHeight" Value="22"/>
+            <Setter Property="LineHeight" Value="24"/>
         </Style>
         <Style Selector="TextBlock.ButtonSendText">
             <Setter Property="FontSize" Value="16"/>
@@ -37,19 +37,54 @@
             <Setter Property="Foreground" Value="#343D4B"/>
             <Setter Property="Margin" Value="12 5 12 5"/>
         </Style>
+        <Style Selector="TextBlock.AverageGray">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Foreground" Value="#343D4B"/>
+            <Setter Property="Margin" Value="0 0 9 0"/>
+        </Style>
+        <Style Selector="TextBlock.AverageBlye">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Foreground" Value="#194F90"/>
+            <Setter Property="FontWeight" Value="600"/>
+        </Style>
+        <Style Selector="Grid.MarginForGrid">
+            <Setter Property="Margin" Value="33 16 33 0"/>
+        </Style>
     </Window.Styles>
     <Design.DataContext>
-        <vm:CancelAppealViewModel/>
+        <vm:ConnectionRequestViewModel/>
     </Design.DataContext>
-    <Grid RowDefinitions="Auto Auto">
+    <Grid RowDefinitions="Auto Auto Auto Auto Auto">
         <TextBlock Classes="Question"
-                   Margin="26 22 26 28"
+                   Margin="26 26 26 0"
                    TextWrapping="Wrap">
-            Вся заполненая информация будет утрачена.
-            Продолжить?
+            К вашему рабочему месту запрошено соединение от:
         </TextBlock>
-        <Grid Grid.Row="1" 
-              Grid.ColumnDefinitions="264 Auto">
+        <Grid Grid.Row="1"
+              Classes="MarginForGrid"
+              Grid.ColumnDefinitions="Auto Auto">
+            <TextBlock Classes="AverageGray">ID</TextBlock>
+            <TextBlock Grid.Column="1"
+                       Classes="AverageBlye">
+                465608192 <!--ToDo: Binding ID -->
+            </TextBlock>
+        </Grid>
+        <Grid Grid.Row="2"
+              Classes="MarginForGrid"
+              Grid.ColumnDefinitions="Auto Auto">
+            <TextBlock Classes="AverageGray">Имя пользователя</TextBlock>
+            <TextBlock Grid.Column="1"
+                       Classes="AverageBlye">
+                Лупа Пупова <!--ToDo: Binding UserName -->
+            </TextBlock>
+        </Grid>
+        <TextBlock Grid.Row="3"
+                   Classes="Question"
+                   Margin="26 28 26 22">
+            Разрешить соединение?
+        </TextBlock>
+        <Grid Grid.Row="4" 
+              Grid.ColumnDefinitions="284 Auto">
             <Button 
                 HorizontalAlignment="Right"
                 BorderBrush="#9295A9"
@@ -60,10 +95,9 @@
             <Button Grid.Column="1"
                     Background="#194F90"
                     Margin="22 0 28 0"
-                    Click="CancelAll"
                     Command="{Binding CloseWindow}"
                     BorderBrush="#153F72">
-                <TextBlock Text="Продолжить"
+                <TextBlock Text="Разрешить"
                            Classes="ButtonSendText"/>
             </Button>
         </Grid>
