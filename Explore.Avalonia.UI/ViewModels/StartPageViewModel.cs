@@ -10,14 +10,14 @@ namespace Explore.Avalonia.UI.ViewModels
     {
         public StartPageViewModel ()
         {
-            //ConnectionRequest window = new ConnectionRequest();
+            //Loading window = new Loading();
             //window.Show();
             
         }
         
         public void OpenNewWindow(object sender, PointerPressedEventArgs e)
         {
-            RequestingTechnicalSupport window = new RequestingTechnicalSupport(); 
+            SettingsId window = new SettingsId(); 
             window.Show(); 
         }
         

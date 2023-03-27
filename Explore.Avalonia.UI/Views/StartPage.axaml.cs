@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Media.Imaging;
 using Explore.Avalonia.UI.ViewModels;
 using ReactiveUI;
 
@@ -47,6 +48,12 @@ namespace Explore.Avalonia.UI.Views
         private void OnSupportButtonClick(object? sender, PointerPressedEventArgs e)
         {
             RequestingTechnicalSupport window = new RequestingTechnicalSupport();
+            window.Show();
+        }
+
+        private void OnSettingsButtonClicked(object? sender, RoutedEventArgs e)
+        {
+            SettingsId window = new SettingsId();
             window.Show();
         }
     }

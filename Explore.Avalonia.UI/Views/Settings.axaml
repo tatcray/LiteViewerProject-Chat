@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800"
+        x:Class="Explore.Avalonia.UI.Views.SettingsId"
+        Title="Параметры"
+        Foreground="#343D4B"
+		FontStyle="Normal"
+		Height="650" Width="710"
+        Icon="../Assets/Header/Logo.ico"
+		WindowStartupLocation="Manual">
+	<Window.Background>
+		<LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+			<GradientStop Color="#DFE3EC" Offset="0.5" />
+			<GradientStop Color="#F5F6FC" Offset="1.0" />
+		</LinearGradientBrush>
+	</Window.Background>
+
+	<Window.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="FontFamily" Value="Open Sans"/>
+			<Setter Property="FontWeight" Value="400"/>
+			<Setter Property="FontStyle" Value="Normal"/>
+		</Style>
+		<Style Selector="TextBlock.TabsHeader">
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="Foreground" Value="#C6E3FF"/>
+		</Style>
+		<Style Selector="TextBlock.Tab">
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="FontWeight" Value="600"/>
+			<Setter Property="Foreground" Value="White"/>
+		</Style>
+		<Style Selector="TextBlock.SelectedTab">
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="Foreground" Value="#343D4B"/>
+		</Style>
+		<Style Selector="TextBlock.TabContentText">
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="FontWeight" Value="600"/>
+			<Setter Property="Foreground" Value="#3A8DDE"/>
+		</Style>
+		<Style Selector="TextBlock.TabContentHeader">
+			<Setter Property="FontSize" Value="18"/>
+			<Setter Property="Foreground" Value="#343D4B"/>
+			<Setter Property="Margin" Value="0 10 0 6"/>
+		</Style>
+		<Style Selector="TextBox.TextBox">
+			<Setter Property="Width" Value="300"/>
+			<Setter Property="Height" Value="26"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
+		<Style Selector="TextBlock.ButtonSaveText">
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="Margin" Value="12 5 12 5"/>
+		</Style>
+		<Style Selector="TextBlock.ButtonСancelText">
+			<Setter Property="FontSize" Value="16"/>
+			<Setter Property="FontWeight" Value="500"/>
+			<Setter Property="Foreground" Value="#343D4B"/>
+			<Setter Property="Margin" Value="12 5 12 5"/>
+		</Style>
+	</Window.Styles>
+	<Design.DataContext>
+		<vm:SettingsIdViewModel/>
+	</Design.DataContext>
+	
+	<TextBlock Text="{Binding testte}"
+	           Classes=""></TextBlock>
+</Window>

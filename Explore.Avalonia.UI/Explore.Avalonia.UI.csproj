@@ -64,5 +64,17 @@
       <DependentUpon>ScreenConnection.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NewVersion.axaml.cs">
+      <DependentUpon>Loading.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Loading.axaml.cs">
+      <DependentUpon>Loading.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Settings.axaml.cs">
+      <DependentUpon>Settings.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

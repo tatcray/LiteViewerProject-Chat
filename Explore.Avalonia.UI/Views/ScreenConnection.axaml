@@ -8,6 +8,7 @@
         Foreground="#343D4B"
         FontStyle="Normal"
         WindowState="Maximized"
+        Icon="../Assets/Header/Logo.ico"
         WindowStartupLocation="Manual">
     <Window.Background>
         <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">

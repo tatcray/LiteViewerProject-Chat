@@ -4,13 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" 
-        x:Class="Explore.Avalonia.UI.Views.Successfully"
-        Title="Обращение отправлено"
+        x:Class="Explore.Avalonia.UI.Views.NewVersion"
+        Title="Доступна новая версия"
         Foreground="#343D4B"
         FontStyle="Normal"
-        Height="200" Width="455"
-        WindowStartupLocation="Manual"
-        Icon="../Assets/Header/Logo.ico">
+        Icon="../Assets/Header/Logo.ico"
+        Height="176" Width="455"
+        WindowStartupLocation="Manual">
     <Window.Background>
         <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
             <GradientStop Color="#DFE3EC" Offset="0.5" />
@@ -24,8 +24,8 @@
         </Style>
         <Style Selector="TextBlock.Question">
             <Setter Property="Foreground" Value="#343D4B"/>
-            <Setter Property="LineHeight" Value="24"/>
             <Setter Property="FontSize" Value="18"/>
+            <Setter Property="LineHeight" Value="22"/>
         </Style>
         <Style Selector="TextBlock.ButtonSendText">
             <Setter Property="FontSize" Value="16"/>
@@ -40,25 +40,31 @@
         </Style>
     </Window.Styles>
     <Design.DataContext>
-        <vm:SuccessfullyViewModel/>
+        <vm:NewVersionViewModel/>
     </Design.DataContext>
     <Grid RowDefinitions="Auto Auto">
-        <TextBlock Classes="Question" 
-                   TextWrapping="Wrap"
-                   Width="404"
-                   Height="74"
-                   Margin="26 22 26 28">
-            На указанный вами адрес электронной почты POCHTA@BLABLABLA будет отправлено письмо с номером обращения
+        <TextBlock Classes="Question"
+                   Margin="26 28 18 28"
+                   TextWrapping="Wrap">
+            Внимание! Доступна новая версия приложения. Обновить сейчас?
         </TextBlock>
-        <Button Grid.Row="1"
-                Background="#194F90"
-                Click="CancelAll"
-                Margin="22 0 28 0"
+        <Grid Grid.Row="1" 
+              Grid.ColumnDefinitions="286 Auto">
+            <Button 
                 HorizontalAlignment="Right"
-                Command="{Binding CloseWindow}"
-                BorderBrush="#153F72">
-            <TextBlock Text="Готово"
-                       Classes="ButtonSendText"/>
-        </Button>
+                BorderBrush="#9295A9"
+                Command="{Binding CloseWindow}">
+                <TextBlock Classes="ButtonСancelText"
+                           Text="Напомнить позже"/>
+            </Button>
+            <Button Grid.Column="1"
+                    Background="#194F90"
+                    Margin="22 0 0 0"
+                    Command="{Binding CloseWindow}"
+                    BorderBrush="#153F72">
+                <TextBlock Text="Обновить"
+                           Classes="ButtonSendText"/>
+            </Button>
+        </Grid>
     </Grid>
 </Window>

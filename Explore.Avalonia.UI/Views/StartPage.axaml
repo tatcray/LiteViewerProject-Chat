@@ -8,14 +8,18 @@
         Foreground="#343D4B"
         FontStyle="Normal"
         Height="460" Width="730"
-        WindowStartupLocation="Manual">
-	 <Window.Background>
+        Title="LiteViewer"
+        WindowStartupLocation="Manual"
+        Icon="../Assets/Header/Logo.ico">
+        <!--HasSystemDecorations="false"-->
+
+	<Window.Background>
 		 <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
 			 <GradientStop Color="#DFE3EC" Offset="0.5" />
 			 <GradientStop Color="#F5F6FC" Offset="1.0" />
 		 </LinearGradientBrush>
-	 </Window.Background> 
-
+	 </Window.Background>
+ 
 	<Window.Styles>
 		<Style Selector="TextBlock.BoldBigText">
 			<Setter Property="FontSize" Value="36"/>
@@ -81,9 +85,12 @@
 			</TextBlock>
 			<TextBlock Grid.Column="1"
 		           Classes="BoldBigText"
-		           Text="{Binding id}"> <!-- откуда брать ID? -->
+		           >
+				<!--Text="{Binding id}"-->
+				345678920 <!-- откуда брать ID? -->
 			</TextBlock>
 			<Button Grid.Column="2"
+			        Click="OnSettingsButtonClicked"
 			        Margin="0"
 			        Classes="DefaultButtonStyle">
 				<Svg Path="../Assets/StartPageIcons/IconSettings.svg"/>

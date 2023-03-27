@@ -13,6 +13,7 @@
 		FontStyle="Normal"
 		Height="490" Width="490"
 		Background="#F5F6FC"
+        Icon="../Assets/Header/Logo.ico"
         WindowStartupLocation="Manual">
 
 	<Window.Styles>
