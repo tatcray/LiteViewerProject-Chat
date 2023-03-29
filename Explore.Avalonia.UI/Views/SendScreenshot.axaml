@@ -9,6 +9,7 @@
         Foreground="#343D4B"
         FontStyle="Normal"
         Height="140" Width="455"
+        Icon="../Assets/Header/Logo.ico"
         WindowStartupLocation="Manual">
     <Window.Background>
         <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
@@ -51,7 +52,6 @@
             <Button 
                 HorizontalAlignment="Right"
                 Margin="26 0 156 0"
-                Click="Button_Cancel_Click" 
                 Command="{Binding CloseWindow}"
                 BorderBrush="#9295A9">
                 <TextBlock Classes="ButtonСancelText"

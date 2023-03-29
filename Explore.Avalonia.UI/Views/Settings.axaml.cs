@@ -14,7 +14,7 @@ namespace Explore.Avalonia.UI.Views
     {
         public SettingsId()
         {
-            DataContext = new SettingsIdViewModel();
+            DataContext = new SettingsIdViewModel(this);
             InitializeComponent();
         }
     }

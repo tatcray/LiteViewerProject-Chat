@@ -10,7 +10,7 @@ namespace Explore.Avalonia.UI.ViewModels
     {
         public StartPageViewModel ()
         {
-            //Loading window = new Loading();
+            //Loading window = new Loading(); 
             //window.Show();
             
         }

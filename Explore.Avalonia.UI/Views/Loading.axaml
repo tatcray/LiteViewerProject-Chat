@@ -1,0 +1,136 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        x:Class="Explore.Avalonia.UI.Views.Loading"
+        Title="Запрос на соединение отправлен, ожидайте."
+        Foreground="#343D4B"
+        FontStyle="Normal"
+        Icon="../Assets/Header/Logo.ico"
+        Height="315" Width="530"
+        WindowStartupLocation="Manual">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+            <GradientStop Color="#DFE3EC" Offset="0.5" />
+            <GradientStop Color="#F5F6FC" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Styles>
+        <Style Selector="Image">
+            <Setter Property="Width" Value="176"/>
+        </Style>
+        <Style Selector="Svg.Line">
+            <Setter Property="Width" Value="117"/>
+            <Setter Property="Height" Value="2"/>
+        </Style>
+        <Style Selector="TextBlock.ButtonSendText">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="12 5 12 5"/>
+        </Style>
+        <Style Selector="TextBlock.ButtonСancelText">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="Foreground" Value="#343D4B"/>
+            <Setter Property="Margin" Value="12 5 12 5"/>
+        </Style>
+        <Style Selector="Svg.Dot1">
+            <Setter Property="Width" Value="14"/>
+            <Setter Property="Height" Value="14"/>
+            <Setter Property="Margin" Value="-240 0 0 0"/>
+            <Style.Animations>
+                <Animation Duration="0:0:1.5"
+                           Delay="0:0:1.2"
+                           RepeatCount="3000">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="Margin" Value="-320 -20 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="40%">
+                        <Setter Property="Margin" Value="-156 -19 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="50%">
+                        <Setter Property="Margin" Value="-158 19 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Margin" Value="-16 20 0 0"/>
+                    </KeyFrame> 
+                </Animation>
+            </Style.Animations>
+        </Style>
+        <Style Selector="Svg.Dot2">
+            <Setter Property="Width" Value="14"/>
+            <Setter Property="Height" Value="14"/>
+            <Setter Property="Margin" Value="-240 0 0 0"/>
+            <Style.Animations>
+                <Animation Duration="0:0:2"
+                           Delay="0:0:1.4"
+                           RepeatCount="3000">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="Margin" Value="-320 -20 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="40%">
+                        <Setter Property="Margin" Value="-156 -19 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="50%">
+                        <Setter Property="Margin" Value="-158 19 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Margin" Value="-16 20 0 0"/>
+                    </KeyFrame> 
+                </Animation>
+            </Style.Animations>
+        </Style>
+        <Style Selector="Svg.Dot3">
+            <Setter Property="Width" Value="14"/>
+            <Setter Property="Height" Value="14"/>
+            <Setter Property="Margin" Value="-240 0 0 0"/>
+            <Style.Animations>
+                <Animation Duration="0:0:2"
+                           Delay="0:0:1.6"
+                           RepeatCount="3000">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="Margin" Value="-320 -20 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="40%">
+                        <Setter Property="Margin" Value="-156 -19 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="50%">
+                        <Setter Property="Margin" Value="-158 19 0 0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Margin" Value="-16 20 0 0"/>
+                    </KeyFrame> 
+                </Animation>
+            </Style.Animations>
+        </Style>
+        
+    </Window.Styles>
+    <Design.DataContext>
+        <vm:LoadingViewModel/>
+    </Design.DataContext>
+    <Grid RowDefinitions="Auto Auto">
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0 28">
+            <Image Source="../Assets/Loading/leftPC.png"/>
+            <Svg Path="../Assets/Loading/Line.svg"
+                 Width="160"
+                 Height="30"></Svg>
+            <Svg Classes="Dot1" Path="../Assets/Loading/Dot.svg"></Svg>
+            <Svg Classes="Dot2" Path="../Assets/Loading/Dot.svg"></Svg>
+            <Svg Classes="Dot3" Path="../Assets/Loading/Dot.svg"></Svg>
+            <Image Source="../Assets/Loading/RightPC.png"/>
+        </StackPanel>
+        <Button Grid.Row="1"
+                Background="#194F90"
+                Margin="0 0 28 0"
+                HorizontalAlignment="Right"
+                Command="{Binding CloseWindow}"
+                BorderBrush="#153F72">
+            <TextBlock Text="Обновить"
+                       Classes="ButtonSendText"/>
+        </Button>
+    </Grid>
+</Window>

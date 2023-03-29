@@ -9,6 +9,7 @@
         Foreground="#343D4B"
         FontStyle="Normal"
         Height="316" Width="455"
+        Icon="../Assets/Header/Logo.ico"
         WindowStartupLocation="Manual">
     <Window.Background>
         <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">

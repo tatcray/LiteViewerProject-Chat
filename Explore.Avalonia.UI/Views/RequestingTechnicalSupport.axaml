@@ -106,7 +106,7 @@
 		</StackPanel>
 		<TextBlock Classes="SimpleText"
 		           Width="627"
-		           Margin="32 124 32 0"
+		           Margin="32 154 32 0"
 		           TextWrapping="Wrap">
 				Чтобы оставить заявку на оказание технической поддержки, заполните анкету и нажмите кнопку "Отправить"
 		</TextBlock>

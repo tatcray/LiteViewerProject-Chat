@@ -82,6 +82,17 @@
             <Button>
                 <Svg Path="../Assets/ScreenConnectionIcons/BroadcastQuality.svg"/>
             </Button>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="20 20 0 0">0                       5                        10</TextBlock>
+                <Slider Width="215"
+                        Minimum="0"
+                        Maximum="10"
+                        TickFrequency="1"
+                        BorderBrush="Red"
+                        Margin="0 -20 0 0"
+                        IsSnapToTickEnabled="True">
+                </Slider>
+            </StackPanel>
         </StackPanel>
         <Image Grid.Row="1"
                Source="../Assets/ScreenConnectionIcons/Image5.png"/>
