@@ -83,7 +83,7 @@
                 <Svg Path="../Assets/ScreenConnectionIcons/BroadcastQuality.svg"/>
             </Button>
             <StackPanel Orientation="Vertical">
-                <TextBlock Margin="20 20 0 0">0                       5                        10</TextBlock>
+                <TextBlock Margin="0 20 0 0">0                       5                       10</TextBlock>
                 <Slider Width="215"
                         Minimum="0"
                         Maximum="10"

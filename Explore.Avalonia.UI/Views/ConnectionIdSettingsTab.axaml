@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Explore.Avalonia.UI.Views.ConnectionIdSettingsTab">
+    
+	<Grid Grid.Column="1"   
+	      Margin="0 54 36 0">
+		<StackPanel Orientation="Vertical"
+		            Margin="0 16 0 0">
+			<TextBlock Classes="TabsHeader">Панель параметров подключения</TextBlock>
+			<StackPanel Orientation="Horizontal"
+			            Margin="0 10 0 16">
+				<CheckBox/>
+				<TextBlock Margin="5 10 0 8">
+					Разрешить подключение без подтверждения
+				</TextBlock>
+			</StackPanel>
+			<TextBlock>Постоянный пароль для подключения:</TextBlock>
+			<StackPanel Orientation="Horizontal"
+			            Margin="0 10 0 0">
+				<TextBox Width="365"
+				         Height="26"
+				         CornerRadius="4 0 0 4"/>
+				<Button Background="#194F90"
+				        Width="32"
+				        Height="32"
+				        CornerRadius="0 4 4 0">
+					<Svg Path="../Assets/Settings/Trash.svg"
+					     Width="24"/>
+				</Button>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+        
+</UserControl>
