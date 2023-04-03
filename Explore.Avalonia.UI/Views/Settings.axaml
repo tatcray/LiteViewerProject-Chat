@@ -96,14 +96,14 @@
 				<StackPanel Orientation="Vertical"
 				            Margin="20 17 0 0 ">
 					<StackPanel Orientation="Horizontal">
-						<Svg Path="../Assets/Settings/Triangle.svg"
+						<!--<Svg Path="../Assets/Settings/Triangle.svg"
 						     Width="8"
 						     Height="8"
-						     Margin="0 5 8 0"/>
+						     Margin="0 5 8 0"/>-->
 						<TextBlock Classes="TabsHeader">Параметры</TextBlock>
 					</StackPanel>
-					<Button Tag="TabSelectionButton" Click="ShowConnectionTab" GotFocus="InputElement_OnGotFocus" Classes="ListText">Подключение</Button>
-					<Button Tag="TabSelectionButton" Click="ShowWhiteListTab"  GotFocus="InputElement_OnGotFocus" Classes="ListText">Белый список</Button>
+					<Button Name="TabSelectionButton1" GotFocus="InputElement_OnGotFocus" Classes="ListText">Подключение</Button>
+					<Button Name="TabSelectionButton2" GotFocus="InputElement_OnGotFocus" Classes="ListText">Белый список</Button>
 				</StackPanel>
 			</ScrollViewer>
 			

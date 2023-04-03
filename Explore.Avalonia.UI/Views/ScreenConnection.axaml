@@ -9,7 +9,8 @@
         FontStyle="Normal"
         WindowState="Maximized"
         Icon="../Assets/Header/Logo.ico"
-        WindowStartupLocation="Manual">
+        WindowStartupLocation="Manual"
+        PointerPressed="OnPointerPressed">
     <Window.Background>
         <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
             <GradientStop Color="#DFE3EC" Offset="0.5" />
@@ -31,58 +32,63 @@
     </Design.DataContext>
     <Grid RowDefinitions="60 Auto">
         <StackPanel Orientation="Horizontal">
-            <Button>
+            <Button ToolTip.Tip="Отключение">
                 <Svg Path="../Assets/ScreenConnectionIcons/Arrows.svg"/>
             </Button>
-            <Button Click="ChatButton_OnClick">
+            <Button Click="ChatButton_OnClick"
+                    ToolTip.Tip="Чат с пользователем">
                 <Svg Path="../Assets/ScreenConnectionIcons/Message.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Отправить">
                 <Svg Path="../Assets/ScreenConnectionIcons/ACD.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Заблокировать">
                 <Svg Path="../Assets/ScreenConnectionIcons/Lock.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Режим “только просмотр”">
                 <Svg Path="../Assets/ScreenConnectionIcons/Eye.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Сделать скриншот">
                 <Svg Path="../Assets/ScreenConnectionIcons/Screen.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Обмен файлами">
                 <Svg Path="../Assets/ScreenConnectionIcons/FileSharing.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Диспетчер пользователя">
                 <Svg Path="../Assets/ScreenConnectionIcons/SettingsMonitor.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Regedit">
                 <Svg Path="../Assets/ScreenConnectionIcons/Regedit.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="CMD">
                 <Svg Path="../Assets/ScreenConnectionIcons/CMD.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="PowerShell">
                 <Svg Path="../Assets/ScreenConnectionIcons/PowerShell.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Службы">
                 <Svg Path="../Assets/ScreenConnectionIcons/WindowSettings.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Диспетчер задач">
                 <Svg Path="../Assets/ScreenConnectionIcons/TaskManager.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="MMC">
                 <Svg Path="../Assets/ScreenConnectionIcons/MMC.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Монитор ресурсов">
                 <Svg Path="../Assets/ScreenConnectionIcons/ResourceMonitor.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Скачать и запустить">
                 <Svg Path="../Assets/ScreenConnectionIcons/Autoruns.svg"/>
             </Button>
-            <Button>
+            <Button ToolTip.Tip="Качество трансляции"
+                    Click="ShowSlider_Click">
                 <Svg Path="../Assets/ScreenConnectionIcons/BroadcastQuality.svg"/>
             </Button>
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical"
+                        Name="slider"
+                        Margin="25 0 0 0"
+                        IsVisible="False">
                 <TextBlock Margin="0 20 0 0">0                       5                       10</TextBlock>
                 <Slider Width="215"
                         Minimum="0"
@@ -94,7 +100,6 @@
                 </Slider>
             </StackPanel>
         </StackPanel>
-        <Image Grid.Row="1"
-               Source="../Assets/ScreenConnectionIcons/Image5.png"/>
+        <Image Grid.Row="1" Source="../Assets/ScreenConnectionIcons/Image5.png"/>
     </Grid>
 </Window>
