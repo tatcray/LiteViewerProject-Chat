@@ -7,7 +7,7 @@
         x:Class="Explore.Avalonia.UI.Views.StartPage"
         Foreground="#343D4B"
         FontStyle="Normal"
-        Height="460" Width="730"
+        Height="455" Width="730"
         Title="LiteViewer"
         WindowStartupLocation="Manual"
         Icon="../Assets/Header/Logo.ico">
@@ -77,7 +77,7 @@
     <Design.DataContext>
         <vm:StartPageViewModel/>
     </Design.DataContext>
-	<ItemsControl Padding="38 32 38 0">
+	<ItemsControl Padding="38 24 38 0">
 		<Grid ColumnDefinitions="Auto Auto 46 Auto">
 			<TextBlock Classes="LightBigText"
 		           Width="112"

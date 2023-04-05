@@ -1,0 +1,82 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        x:Class="Explore.Avalonia.UI.Views.ErrorWindow"
+        Title="Ошибка"
+        Foreground="#343D4B"
+        FontStyle="Normal"
+        Icon="../Assets/Error/Error.ico"
+        Height="190" Width="476"
+        WindowStartupLocation="Manual">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+            <GradientStop Color="#DFE3EC" Offset="0.5" />
+            <GradientStop Color="#F5F6FC" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="Open Sans"/>
+            <Setter Property="FontWeight" Value="400"/>
+        </Style>
+        <Style Selector="TextBlock.Question">
+            <Setter Property="Foreground" Value="#343D4B"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="LineHeight" Value="22"/>
+        </Style>
+        <Style Selector="TextBlock.ButtonSendText">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="12 5 12 5"/>
+        </Style>
+        <Style Selector="TextBlock.ButtonСancelText">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="500"/>
+            <Setter Property="Foreground" Value="#343D4B"/>
+            <Setter Property="Margin" Value="12 5 12 5"/>
+        </Style>
+    </Window.Styles>
+    <Design.DataContext>
+        <vm:ErrorWindowViewModel/>
+    </Design.DataContext>
+    <Grid RowDefinitions="Auto Auto">
+        <StackPanel Margin="18 14 18 0">
+            <StackPanel Orientation="Horizontal">
+                <Svg Path="../Assets/Error/Error.svg"
+                     Width="48"
+                     Height="48"/>
+                <TextBlock Classes="Question"
+                           TextWrapping="Wrap"
+                           Margin="4 12 0 0">
+                    Внимание, произошла ошибка №4884   <!--ToDo: хранить номера отметок-->
+                </TextBlock>
+            </StackPanel>
+            <TextBlock Classes="Question"
+                       Margin="10 8 0 0">
+                Описание ошики (Пример: Вы ошиблись.)
+            </TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="1" 
+              Grid.ColumnDefinitions="Auto Auto"
+              HorizontalAlignment="Right"
+              Margin="0 24 32 24">
+            <Button 
+                BorderBrush="#9295A9"
+                Command="{Binding CloseWindow}">
+                <TextBlock Classes="ButtonСancelText"
+                           Text="Закрыть"/>
+            </Button>
+            <Button Grid.Column="1"
+                    Background="#194F90"
+                    Margin="22 0 0 0"
+                    Command="{Binding CloseWindow}"
+                    BorderBrush="#153F72">
+                <TextBlock Text="Сообщить об ошибке"
+                           Classes="ButtonSendText"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

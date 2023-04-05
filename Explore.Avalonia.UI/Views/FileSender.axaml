@@ -1,0 +1,75 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        x:Class="Explore.Avalonia.UI.Views.FileSender"
+        Title="Отправить файлы"
+        Foreground="#343D4B"
+        FontStyle="Normal"
+        Icon="../Assets/Header/Logo.ico"
+        Height="346" Width="455"
+        WindowStartupLocation="Manual">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+            <GradientStop Color="#DFE3EC" Offset="0.5" />
+            <GradientStop Color="#F5F6FC" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Styles>
+        <Style Selector="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="164"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Margin" Value="17 0 26 8"/>
+            <Setter Property="Padding" Value="6"/>
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.ButtonBlueText">
+            <Setter Property="Background" Value="#5085B8"/>
+        </Style>
+        <Style Selector="Button.ButtonLightBlueText">
+            <Setter Property="Margin" Value="17 24 26 8"/>
+            <Setter Property="Background" Value="#9DC6EF"/>
+        </Style>
+        <Style Selector="Button.ButtonSendText">
+            <Setter Property="Margin" Value="17 92 26 8"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="#194F90"/>
+        </Style>
+    </Window.Styles>
+    <Design.DataContext>
+        <vm:FileSenderViewModel/>
+    </Design.DataContext>
+    <Grid ColumnDefinitions="Auto Auto">
+        <ScrollViewer Grid.Column="0"
+                      Margin="26 20 0 24"
+                      HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto"
+                      Background="White"
+                      Height="294"
+                      Width="222"
+                      CornerRadius="6"/>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Button Classes="ButtonLightBlueText">
+                <TextBlock>Получить</TextBlock>
+            </Button>
+            <Button Classes="ButtonBlueText">
+                <TextBlock>Добавить из буфера</TextBlock>
+            </Button>
+            <Button Classes="ButtonBlueText">
+                <TextBlock>Добавить папку</TextBlock>
+            </Button>
+            <Button Classes="ButtonBlueText">
+                <TextBlock>Добавить файл</TextBlock>
+            </Button>
+            <Button Classes="ButtonSendText">
+                <TextBlock>Отправить</TextBlock>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
