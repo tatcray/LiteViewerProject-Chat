@@ -51,7 +51,7 @@
             <Button ToolTip.Tip="Сделать скриншот">
                 <Svg Path="../Assets/ScreenConnectionIcons/Screen.svg"/>
             </Button>
-            <Button ToolTip.Tip="Обмен файлами">
+            <Button Click="ButtonFileSender_OnClick" ToolTip.Tip="Обмен файлами">
                 <Svg Path="../Assets/ScreenConnectionIcons/FileSharing.svg"/>
             </Button>
             <Button ToolTip.Tip="Диспетчер пользователя">

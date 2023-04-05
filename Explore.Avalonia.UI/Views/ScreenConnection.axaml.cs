@@ -51,5 +51,11 @@ namespace Explore.Avalonia.UI.Views
             ChatWindow window = new ChatWindow();
             window.Show();
         }
+
+        private void ButtonFileSender_OnClick(object? sender, RoutedEventArgs e)
+        {
+            FileSender window = new FileSender();
+            window.Show();
+        }
     }
 }

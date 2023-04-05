@@ -10,8 +10,8 @@ namespace Explore.Avalonia.UI.ViewModels
     {
         public StartPageViewModel ()
         {
-            FileSender window = new FileSender(); 
-            window.Show();
+            //FileSender window = new FileSender(); 
+            //window.Show();
             
         }
         
