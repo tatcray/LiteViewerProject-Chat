@@ -10,7 +10,7 @@ namespace Explore.Avalonia.UI.ViewModels
     {
         public StartPageViewModel ()
         {
-            //FileSender window = new FileSender(); 
+            //CurrentConnection window = new CurrentConnection(); 
             //window.Show();
             
         }

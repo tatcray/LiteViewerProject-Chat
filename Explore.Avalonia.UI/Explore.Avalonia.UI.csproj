@@ -84,5 +84,9 @@
       <DependentUpon>FileSender.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\CurrentConnection.axaml.cs">
+      <DependentUpon>CurrentConnection.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

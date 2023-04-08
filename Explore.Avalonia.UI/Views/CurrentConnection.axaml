@@ -1,0 +1,71 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Explore.Avalonia.UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        x:Class="Explore.Avalonia.UI.Views.CurrentConnection"
+        Title="Отправить файлы"
+        Foreground="#343D4B"
+        FontStyle="Normal"
+        Icon="../Assets/Header/Logo.ico"
+        Height="150"
+        Width="250"
+        HasSystemDecorations="False"
+        WindowStartupLocation="Manual">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+            <GradientStop Color="#DFE3EC" Offset="0.5" />
+            <GradientStop Color="#F5F6FC" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Styles>
+        <Style Selector="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="8 6 8 6"/>
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="Open Sans"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.ButtonBlue">
+            <Setter Property="Background" Value="#8589A0"/>
+        </Style>
+        <Style Selector="Button.ButtonLightBlue">
+            <Setter Property="Background" Value="#3E97FE"/>
+        </Style>
+    </Window.Styles>
+    <Design.DataContext>
+        <vm:CurrentConnectionViewModel/>
+    </Design.DataContext>
+    <StackPanel Orientation="Vertical">
+        <Svg Path="../Assets/CurrentConnection/Logo.svg"
+             Name="DisabledSvg"
+             Width="216"
+             Height="36"
+             Margin="10"/>
+        <TextBlock Name="DisabledText" Margin="0 10">Подключен ID: 12122764</TextBlock>
+        <Grid ColumnDefinitions="* Auto"
+                    Margin="18 10 10 10">
+            <Button Width="32"
+                    Height="32"
+                    Classes="ButtonLightBlue"
+                    Name="ResizeButton"
+                    Click="OnResizeButtonClick">
+                <Svg Path="../Assets/CurrentConnection/Arrow.svg"
+                     Width="13"
+                     Height="18"
+                     Name="RotatingSvg"/>
+            </Button>
+            <Button Grid.Column="1"
+                    Classes="ButtonBlue"
+                    HorizontalAlignment="Center"
+                    Height="32"
+                    Margin="0 0 30 0"
+                    Command="{Binding CloseWindow}">
+                <TextBlock>Остановить сессию</TextBlock>
+            </Button>
+        </Grid>
+    </StackPanel>
+</Window>

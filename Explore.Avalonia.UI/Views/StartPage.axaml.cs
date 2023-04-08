@@ -43,6 +43,9 @@ namespace Explore.Avalonia.UI.Views
         {
             ScreenConnection window = new ScreenConnection();
             window.Show();
+            
+            CurrentConnection window2 = new CurrentConnection(); 
+            window2.Show();
         }
 
         private void OnSupportButtonClick(object? sender, PointerPressedEventArgs e)
