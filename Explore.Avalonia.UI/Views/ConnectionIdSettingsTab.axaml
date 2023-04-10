@@ -24,7 +24,7 @@
 				        Width="32"
 				        Height="32"
 				        CornerRadius="0 4 4 0">
-					<Svg Path="../Assets/Settings/Trash.svg"
+					<Svg Path="../Assets/Settings/Reset.svg"
 					     Width="24"/>
 				</Button>
 			</StackPanel>

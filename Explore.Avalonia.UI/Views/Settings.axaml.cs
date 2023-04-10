@@ -33,8 +33,7 @@ namespace Explore.Avalonia.UI.Views
             button1.Foreground = Brush.Parse("#3A8DDE");
             button2.Foreground = Brush.Parse("#7C7C7C");
             
-            ContentControl.Content = new WhiteListSettingsTab();
-            
+            ContentControl.Content = new ConnectionIdSettingsTab();
         }
         
         private void Button2_Click(object sender, RoutedEventArgs e)
@@ -44,7 +43,9 @@ namespace Explore.Avalonia.UI.Views
 
             var buttonSender = (Button)sender;
             buttonSender.Classes.Clear();
-            ContentControl.Content = new ConnectionIdSettingsTab();
+
+            ContentControl.Content = new WhiteListSettingsTab();
+
         }
 
         private void SetSelectedTab(Button tab)

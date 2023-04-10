@@ -16,7 +16,8 @@
         		</StackPanel>
         		
         		<Button Background="Transparent"
-        		        Margin="26 0 0 14">
+        		        Margin="26 0 0 10"
+                        Click="AddItem">
         			<StackPanel Orientation="Horizontal"
         			            HorizontalAlignment="Center">
         				<Svg Path="../Assets/Settings/Shape.svg"
@@ -26,12 +27,31 @@
         				<TextBlock Foreground="#3A8DDE">Добавить в белый список</TextBlock>
         			</StackPanel>
         		</Button>
+	            
+	            <StackPanel Name="DisabledStackPanel"
+	                        IsVisible="False">
+					<TextBlock>Введите ID для белого списка:</TextBlock>
+	            	<StackPanel Orientation="Horizontal"
+	            	            Margin="0 10 0 16">
+		        	    <TextBox Width="328"
+		        	             Height="26"
+		        	             CornerRadius="4 0 0 4"/>
+		        	    <Button Background="#194F90"
+		        	            Width="32"
+		        	            Height="32"
+		        	            CornerRadius="0 4 4 0">
+			    	        <Svg Path="../Assets/Settings/Reset.svg"
+			    	             Width="24"/>
+		        	    </Button>
+	            	</StackPanel>
+	            </StackPanel>
 
         		<ScrollViewer HorizontalScrollBarVisibility="Disabled"
         		              VerticalScrollBarVisibility="Auto"
         		              Background="White"
-        		              Width="250"
-        		              Height="250">
+                              CornerRadius="4"
+        		              Width="360"
+        		              Height="196">
         			<StackPanel Orientation="Vertical">
         				<StackPanel Orientation="Horizontal"
         				            VerticalAlignment="Top"
@@ -43,7 +63,7 @@
         				<TextBlock Classes="ListItem"
         				           Margin="0 6 0 0">172648935</TextBlock>
         				</StackPanel>
-        			</StackPanel>
+        			</StackPanel> 
         		</ScrollViewer>
         	</StackPanel>
         </Grid>

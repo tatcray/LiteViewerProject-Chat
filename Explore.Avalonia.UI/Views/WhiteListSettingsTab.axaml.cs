@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
 namespace Explore.Avalonia.UI.Views;
@@ -13,5 +14,11 @@ public partial class WhiteListSettingsTab : UserControl
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
+    }
+
+    private void AddItem(object sender, RoutedEventArgs e)
+    {
+        StackPanel disabledStackPanel = this.FindControl<StackPanel>("DisabledStackPanel");
+        disabledStackPanel.IsVisible = !disabledStackPanel.IsVisible;
     }
 }
