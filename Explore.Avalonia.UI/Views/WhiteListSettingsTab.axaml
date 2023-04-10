@@ -1,9 +1,8 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Explore.Avalonia.UI.Views.WhiteListSettingsTab">
-    
-        <Grid Grid.Column="1" 
-              Margin="0 54 36 0">
+	<Grid Grid.Column="1" 
+	      Margin="0 54 36 0">
         	<StackPanel Orientation="Vertical"
         	            Margin="0 16 0 0">
         		<TextBlock Classes="TabsHeader">Панель параметров белого списка</TextBlock>
@@ -35,35 +34,28 @@
 	            	            Margin="0 10 0 16">
 		        	    <TextBox Width="328"
 		        	             Height="26"
+		                         Name="InputTextBox"
 		        	             CornerRadius="4 0 0 4"/>
 		        	    <Button Background="#194F90"
 		        	            Width="32"
 		        	            Height="32"
-		        	            CornerRadius="0 4 4 0">
-			    	        <Svg Path="../Assets/Settings/Reset.svg"
+		        	            CornerRadius="0 4 4 0"
+		                        Click="OnAddButtonClick">
+			    	        <Svg Path="../Assets/Settings/Shape1.svg"
 			    	             Width="24"/>
 		        	    </Button>
 	            	</StackPanel>
 	            </StackPanel>
 
-        		<ScrollViewer HorizontalScrollBarVisibility="Disabled"
+        		<ScrollViewer HorizontalScrollBarVisibility="Auto"
         		              VerticalScrollBarVisibility="Auto"
         		              Background="White"
                               CornerRadius="4"
         		              Width="360"
         		              Height="196">
-        			<StackPanel Orientation="Vertical">
-        				<StackPanel Orientation="Horizontal"
-        				            VerticalAlignment="Top"
-        				            HorizontalAlignment="Left">
-        				<Svg Path="../Assets/Settings/BlueTrash.svg"
-        				     Width="14"
-        				     Height="16"
-        				     Margin="8"/>
-        				<TextBlock Classes="ListItem"
-        				           Margin="0 6 0 0">172648935</TextBlock>
-        				</StackPanel>
-        			</StackPanel> 
+        			<StackPanel Name="MainPanel"
+                                Orientation="Vertical">
+                    </StackPanel> 
         		</ScrollViewer>
         	</StackPanel>
         </Grid>
